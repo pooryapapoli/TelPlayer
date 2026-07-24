@@ -1,0 +1,86 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#0A121B">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:padding="10dp" android:background="#111D2A">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="🎵 تل‌پلیر" android:textSize="21sp" android:textStyle="bold" android:textColor="#FFB454"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text=" نسخه ۱" android:textSize="11sp" android:textColor="#4FB6FF" android:layout_marginStart="6dp"/>
+        <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnPlaylists"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="پلی‌لیست‌ها" android:textColor="#4FB6FF" android:textSize="12sp"/>
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnFolder"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="📁 پوشه" android:textColor="#8BA3BA" android:textSize="12sp"/>
+        <com.google.android.material.button.MaterialButton android:id="@+id/btnScan"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="اسکن تلگرام" android:textSize="12sp"
+            app:backgroundTint="#FFB454" android:textColor="#1A1206"/>
+    </LinearLayout>
+
+    <TextView android:id="@+id/info"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="برای شروع، «اسکن تلگرام» را بزن"
+        android:textColor="#8BA3BA" android:textSize="12sp" android:padding="10dp"/>
+
+    <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:scrollbars="none" android:paddingHorizontal="8dp">
+        <com.google.android.material.chip.ChipGroup android:id="@+id/chips"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            app:singleLine="true"/>
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/list"
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:clipToPadding="false" android:paddingBottom="8dp"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:background="#111D2A" android:padding="12dp">
+        <TextView android:id="@+id/tTitle"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="چیزی در حال پخش نیست" android:textColor="#E9F2FA"
+            android:textSize="14sp" android:textStyle="bold"
+            android:maxLines="1" android:ellipsize="end" android:gravity="center"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginTop="6dp">
+            <TextView android:id="@+id/tCur" android:layout_width="44dp" android:layout_height="wrap_content"
+                android:text="۰:۰۰" android:textColor="#8BA3BA" android:textSize="11sp" android:gravity="center"/>
+            <SeekBar android:id="@+id/seek" android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:progressTint="#FFB454" android:thumbTint="#FFB454"/>
+            <TextView android:id="@+id/tDur" android:layout_width="44dp" android:layout_height="wrap_content"
+                android:text="۰:۰۰" android:textColor="#8BA3BA" android:textSize="11sp" android:gravity="center"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_gravity="center_horizontal"
+            android:gravity="center_vertical" android:layout_marginTop="4dp">
+            <ImageButton android:id="@+id/btnAddPl"
+                android:layout_width="44dp" android:layout_height="44dp"
+                android:src="@android:drawable/ic_input_add"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="افزودن به پلی‌لیست" android:tint="#4FB6FF"/>
+            <ImageButton android:id="@+id/btnPrev"
+                android:layout_width="52dp" android:layout_height="52dp"
+                android:src="@android:drawable/ic_media_previous"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="قبلی" android:tint="#E9F2FA"/>
+            <ImageButton android:id="@+id/btnPlay"
+                android:layout_width="64dp" android:layout_height="64dp"
+                android:src="@android:drawable/ic_media_play"
+                android:background="@drawable/play_bg"
+                android:contentDescription="پخش" android:tint="#1A1206"/>
+            <ImageButton android:id="@+id/btnNext"
+                android:layout_width="52dp" android:layout_height="52dp"
+                android:src="@android:drawable/ic_media_next"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:contentDescription="بعدی" android:tint="#E9F2FA"/>
+            <View android:layout_width="44dp" android:layout_height="44dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

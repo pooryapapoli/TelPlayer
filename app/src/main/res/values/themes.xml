@@ -1,0 +1,10 @@
+<resources>
+    <style name="Theme.TelPlayer" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">#FFB454</item>
+        <item name="colorOnPrimary">#1A1206</item>
+        <item name="colorSecondary">#4FB6FF</item>
+        <item name="android:statusBarColor">#0A121B</item>
+        <item name="android:navigationBarColor">#0A121B</item>
+        <item name="android:windowBackground">#0A121B</item>
+    </style>
+</resources>
